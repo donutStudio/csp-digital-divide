@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Digital Divide Lab is an interactive, research-based static website exploring seven factors behind the digital divide with charts, filters, and solution simulation."
+    />
+    <title>The Digital Divide Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="nav-wrap">
+        <a class="brand" href="#top">The Digital Divide Lab</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu">☰</button>
+        <nav id="mainNav" aria-label="Main navigation">
+          <a href="#explorer">Factors</a>
+          <a href="#comparison">Compare</a>
+          <a href="#local">Local Check</a>
+          <a href="#simulator">Simulator</a>
+          <a href="#synthesis">Takeaways</a>
+          <a href="#references">References</a>
+        </nav>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div id="progressBar"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <p class="eyebrow">Interactive Research Exhibit</p>
+        <h1>The Digital Divide Lab</h1>
+        <p class="lead">
+          The digital divide is the gap between people who can reliably access and effectively use digital tools and internet services, and those who cannot.
+        </p>
+        <a class="button" href="#explorer">Enter the Lab</a>
+        <div class="factor-preview" id="factorPreview" aria-label="Preview of digital divide factors"></div>
+      </section>
+
+      <section class="section" id="explorer">
+        <h2>Factor Explorer</h2>
+        <p class="subtext">Click any factor card to open research tabs (Overview, Data, Solutions, Sources).</p>
+        <div class="factor-grid" id="factorGrid"></div>
+        <article class="detail-panel" id="factorDetail" aria-live="polite">
+          <p>Select a factor to explore details.</p>
+        </article>
+      </section>
+
+      <section class="section" id="comparison">
+        <h2>Comparison Dashboard</h2>
+        <p class="subtext">Use filters to compare estimated digital access rates across different groups.</p>
+        <div class="filters">
+          <label>Income
+            <select id="incomeFilter"></select>
+          </label>
+          <label>Age Group
+            <select id="ageFilter"></select>
+          </label>
+          <label>Education
+            <select id="eduFilter"></select>
+          </label>
+          <label>Geography
+            <select id="geoFilter"></select>
+          </label>
+          <label>Access Type
+            <select id="accessFilter"></select>
+          </label>
+        </div>
+        <div class="compare-results">
+          <div class="stat-box">
+            <h3>Estimated Household Broadband Adoption</h3>
+            <p id="broadbandOutput"></p>
+          </div>
+          <div class="stat-box">
+            <h3>Estimated Device Adequacy</h3>
+            <p id="deviceOutput"></p>
+          </div>
+        </div>
+        <p class="annotation" id="compareAnnotation"></p>
+      </section>
+
+      <section class="section" id="local">
+        <h2>Local Reality Check</h2>
+        <p class="subtext">Broadband conditions vary by neighborhood. Use this prompt to jump to official local coverage data.</p>
+        <div class="local-grid">
+          <div>
+            <label for="locationInput">Enter ZIP code or city</label>
+            <input id="locationInput" placeholder="Ex: 27401 or Detroit, MI" />
+            <button class="button" id="lookupBtn">Check official map</button>
+            <p id="lookupMessage" class="annotation"></p>
+            <a class="button ghost" target="_blank" rel="noopener noreferrer" href="https://broadbandmap.fcc.gov/home">Open FCC National Broadband Map</a>
+          </div>
+          <div class="map-mockup" aria-label="Mockup panel showing local broadband variation">
+            <h3>Coverage can vary block by block</h3>
+            <p>
+              Even within the same city, speed, reliability, and affordability differ. Verify local availability and provider claims using the FCC map.
+            </p>
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://broadbandmap.fcc.gov/home"
+              alt="QR code linking to FCC National Broadband Map"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="simulator">
+        <h2>Solution Simulator</h2>
+        <p class="subtext">Choose a community and intervention to see what problem it helps solve.</p>
+        <div class="filters">
+          <label>Community Profile
+            <select id="communitySelect"></select>
+          </label>
+          <label>Intervention
+            <select id="interventionSelect"></select>
+          </label>
+        </div>
+        <div class="sim-output" id="simOutput"></div>
+      </section>
+
+      <section class="section" id="synthesis">
+        <h2>Final Synthesis</h2>
+        <div class="takeaways">
+          <article>
+            <h3>1) The divide is multi-causal</h3>
+            <p>Cost, infrastructure, devices, skills, age, education, and systemic inequity interact together.</p>
+          </article>
+          <article>
+            <h3>2) One policy is never enough</h3>
+            <p>Effective action blends affordability support, infrastructure investment, and digital skills training.</p>
+          </article>
+          <article>
+            <h3>3) Place-based strategies matter</h3>
+            <p>Data-driven local planning is essential because barriers differ across communities.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="references">
+        <h2>Global References</h2>
+        <ul id="globalRefs" class="sources"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built as an interactive research website for a digital divide assignment • 2020+ data focus</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
