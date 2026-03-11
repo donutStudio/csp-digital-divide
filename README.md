@@ -61,9 +61,15 @@ Keep object keys the same (`id`, `stats`, `chartData`, `citations`, etc.) and on
 
 ## Deployment
 
-Static deployment ready for Netlify or Vercel:
+Static deployment ready for Netlify, Vercel, and GitHub Pages:
 - Build command: `npm run build`
 - Output directory: `dist`
+
+### GitHub Pages notes
+
+This app now uses a hash router and relative Vite asset paths so it works on GitHub Pages project URLs (for example `https://<user>.github.io/<repo>/`) without server-side route rewrites.
+
+When publishing, make sure your Pages source points to your built static files (the `dist` output).
 
 ## Notes
 
