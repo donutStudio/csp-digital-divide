@@ -1,6 +1,6 @@
 # The Digital Divide Lab
 
-The Digital Divide Lab is a clean, interactive research web app for a school digital divide project. It is designed to be simple to navigate and easy to grade while still going beyond a slideshow.
+The Digital Divide Lab is a simplified, static one-page interactive research webpage for the school digital divide assignment. It is easy to grade, easy to deploy, and still goes beyond a basic slideshow.
 
 ## Project Overview
 
@@ -25,17 +25,12 @@ Each factor includes:
 - React + TypeScript
 - Vite
 - Tailwind CSS
-- Recharts
-- React Router
 
 ## Main Sections
 
-- **Home** (clear intro + grading guide)
-- **Factor Explorer** (all required factor content)
-- **Comparison Dashboard** (interactive filters)
-- **Local Reality Check** (ZIP/city simulated lookup + FCC map + QR)
-- **Solution Simulator** (community + intervention matching)
-- **Takeaways** (final synthesis + global references)
+- Single-page intro
+- 7 factor sections (assignment-ready content blocks)
+- Per-factor mini chart, solution, and clickable citations
 
 ## Setup
 
@@ -53,19 +48,12 @@ npm run preview
 
 ## Where to Edit Research Content
 
-- `src/data/factors.ts`
-- `src/data/comparisonData.ts`
-- `src/data/simulatorData.ts`
-
-Keep object keys the same (`id`, `stats`, `chartData`, `citations`, etc.) and only swap values/sources.
+- `src/App.tsx` (the factor objects contain the explanation, statistics, charts, solution text, images, and citations)
 
 ## Deployment
 
-Static deployment ready for Netlify or Vercel:
+Static deployment ready for Netlify, Vercel, and GitHub Pages:
 - Build command: `npm run build`
 - Output directory: `dist`
 
-## Notes
-
-- The Local Reality section is intentionally simulated (no backend), then links users to the official FCC Broadband Map for verified local data.
-- Current statistics are realistic placeholders and should be replaced with final teacher-approved sources if needed.
+For GitHub Pages (repo: `csp-digital-divide`), publish `dist` and open the site at `https://<your-user>.github.io/csp-digital-divide/` (include the trailing slash).
