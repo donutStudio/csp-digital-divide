@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Use relative asset paths so builds work on GitHub Pages project sites
-  // (served from /<repo>/ instead of /).
-  base: './'
+  // GitHub Pages project site base path for this repository.
+  // Prevents blank page caused by missing JS/CSS when visiting /csp-digital-divide.
+  base: '/csp-digital-divide/'
 });

@@ -56,4 +56,4 @@ Static deployment ready for Netlify, Vercel, and GitHub Pages:
 - Build command: `npm run build`
 - Output directory: `dist`
 
-For GitHub Pages, publish the built static files from `dist`.
+For GitHub Pages (repo: `csp-digital-divide`), publish `dist` and open the site at `https://<your-user>.github.io/csp-digital-divide/` (include the trailing slash).
