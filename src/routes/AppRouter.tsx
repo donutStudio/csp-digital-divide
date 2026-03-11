@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Layout } from '../components/Layout';
 import { LoadingState } from '../components/LoadingState';
@@ -11,7 +11,7 @@ const LocalRealityPage = lazy(() => import('../pages/LocalRealityPage').then((mo
 const SimulatorPage = lazy(() => import('../pages/SimulatorPage').then((module) => ({ default: module.SimulatorPage })));
 const TakeawaysPage = lazy(() => import('../pages/TakeawaysPage').then((module) => ({ default: module.TakeawaysPage })));
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Layout />,
