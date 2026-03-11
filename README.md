@@ -1,59 +1,53 @@
-# The Digital Divide Lab
+# The Digital Divide Lab (Static Website)
 
-The Digital Divide Lab is a simplified, static one-page interactive research webpage for the school digital divide assignment. It is easy to grade, easy to deploy, and still goes beyond a basic slideshow.
+This project is a **single-page interactive website** built with plain HTML, CSS, and JavaScript in the repo root for easy GitHub Pages deployment.
 
-## Project Overview
+## What it includes
 
-This app covers 7 required factors:
-1. Affordability
-2. Rural / geographic infrastructure
-3. Device access
-4. Digital skills / literacy
-5. Education level
-6. Age
-7. Race/ethnicity and underserved communities
+- 7 required digital divide factors:
+  1. Affordability
+  2. Rural / geographic infrastructure
+  3. Device access
+  4. Digital skills / literacy
+  5. Education level
+  6. Age
+  7. Race/ethnicity and underserved communities
+- Factor Explorer with tabs:
+  - Overview
+  - Data (stats + chart)
+  - Solutions
+  - Sources
+- Comparison Dashboard with dynamic filters
+- Local Reality Check with FCC Broadband Map link + QR code
+- Solution Simulator (interactive policy lab)
+- Final takeaways + global references list
 
-Each factor includes:
-- explanation
-- 2020+ statistics
-- chart
-- research-based solution
-- source citations with full clickable URLs
+## Files
 
-## Tech Stack
+- `index.html` – page structure and sections
+- `styles.css` – visual design and responsive layout
+- `script.js` – data model + all interactivity
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
+## Run locally
 
-## Main Sections
-
-- Single-page intro
-- 7 factor sections (assignment-ready content blocks)
-- Per-factor mini chart, solution, and clickable citations
-
-## Setup
+Because this is static, you can open `index.html` directly or use a tiny local server:
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 4173
 ```
 
-## Build
+Then open: `http://localhost:4173`
 
-```bash
-npm run build
-npm run preview
-```
+## Deploy to GitHub Pages
 
-## Where to Edit Research Content
+1. Push this repository to GitHub.
+2. In GitHub, go to **Settings → Pages**.
+3. Under **Build and deployment**, select:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main` (or your preferred branch)
+   - **Folder:** `/ (root)`
+4. Save, then wait for deployment.
 
-- `src/App.tsx` (the factor objects contain the explanation, statistics, charts, solution text, images, and citations)
+## Content updates
 
-## Deployment
-
-Static deployment ready for Netlify, Vercel, and GitHub Pages:
-- Build command: `npm run build`
-- Output directory: `dist`
-
-For GitHub Pages (repo: `csp-digital-divide`), publish `dist` and open the site at `https://<your-user>.github.io/csp-digital-divide/` (include the trailing slash).
+All factor content (explanations, stats, chart values, citations, solutions) is in `script.js` under the `factors` array, so swapping in verified final stats is straightforward.
